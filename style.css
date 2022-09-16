@@ -36,7 +36,7 @@ header div {
    border-radius: 50%;
    display: flex;
    padding: 4px;
-   transition: transform .1s;
+   transition: transform .3s;
 }
 
 header img {
