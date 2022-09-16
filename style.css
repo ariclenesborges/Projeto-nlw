@@ -28,6 +28,7 @@ body {
 header {
    text-align: center;
    padding-top: 32px;
+   height: calc(120px + 32px);
 }
 header div {
    width: 120px;
@@ -37,6 +38,7 @@ header div {
    display: flex;
    padding: 4px;
    transition: transform .3s;
+   animation: fromtop .5s .4s backwards;
 }
 
 header img {
@@ -47,12 +49,13 @@ header div:hover {
     transform: scale(1.1);  
 }
 
-main {
+main section {
    max-width: 580px;
    width: 90%;
    margin: 32px auto;
    display: grid;
    gap: 24px;
+   animation: frombottom .7s backwards;
  
 }
 section {
@@ -102,3 +105,58 @@ section ul li:hover {
     width: 70px;
     border: 1px solid #440e54;
 }
+
+/* animation */
+
+
+/*Para você invocar a animaçâo @keyframes nome escolhido { 
+                                    from{
+                                       transform: translateY(-30px)
+                                    } 
+                                    to {
+                                       transform: translateY(0) 
+                                    }
+
+                                 }
+
+- é preciso invocar a funçâo animetion: nome escolhido .3s; onde você quer animar
+
+o from{ translateY(-30px) vai traser animaçâo menos 30px}  
+
+o to{ translateY(0) vai traser o elemento para o seu lugar de origem 
+
+
+                                    */
+
+@keyframes fromtop {
+     from{
+      opacity: 0;
+      transform: translateY(-30px);
+     }
+     to{
+      opacity: 1;
+      transform: translateY(0);
+     }
+}                                    
+@keyframes frombottom{
+    from{
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to{
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+}
+main section:nth-child(1) {
+   animation-delay: 0;
+}
+main section:nth-child(2) {
+   animation-delay: .4s;
+}
+main section:nth-child(3) {
+   animation-delay: .8s;
+}
+
+
